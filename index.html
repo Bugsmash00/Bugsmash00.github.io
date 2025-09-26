@@ -9,23 +9,59 @@
     <style>
         /* Custom styles for the Inter font and main background */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f4f7f9; /* Light, professional background */
+            /* Changed to a slightly punchier light background */
+            background-color: #ecf4f9; 
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle Hover Effect for the Main Card */
+        .main-card {
+            transition: box-shadow 0.5s ease;
+        }
+        .main-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Stronger lift on hover */
+        }
+        
+        /* Header Overlay for Depth */
+        .header-overlay {
+            position: relative;
+        }
+        .header-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Subtle dark gradient overlay, adjusted opacity for vibrancy */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+            pointer-events: none;
+            border-radius: 1rem 1rem 0 0; 
+        }
+
+        /* Responsive padding enhancement for smaller screens */
+        @media (max-width: 640px) {
+            .p-6.sm\:p-10 {
+                padding: 1.5rem; 
+            }
         }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col items-center justify-center p-4">
 
-    <!-- Main Container -->
-    <div class="w-full max-w-4xl bg-white shadow-xl rounded-2xl overflow-hidden">
+    <!-- Main Container - Added 'main-card' class -->
+    <div class="main-card w-full max-w-4xl bg-white shadow-2xl rounded-2xl overflow-hidden">
 
-        <!-- Hero Section (Header) -->
-        <header class="bg-indigo-600 text-white p-8 sm:p-12 text-center">
+        <!-- Hero Section (Header) - Switched to Teal/Cyan for vibrancy -->
+        <header class="header-overlay bg-teal-600 text-white p-8 sm:p-12 text-center">
             <div class="mb-4">
-                <!-- Profile Placeholder (You can add an image later) -->
-                <div class="mx-auto w-24 h-24 bg-indigo-200 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-indigo-800">
+                <!-- Profile Placeholder -->
+                <div class="mx-auto w-24 h-24 bg-teal-200 rounded-full flex items-center justify-center border-4 border-white shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-teal-800">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>                      
                 </div>
@@ -33,7 +69,7 @@
             <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-1">
                 Theertha P Subhash
             </h1>
-            <p class="text-indigo-200 text-lg sm:text-xl font-medium">
+            <p class="text-teal-200 text-lg sm:text-xl font-medium">
                 B.Tech CSE Student | Aspiring Developer
             </p>
         </header>
@@ -43,8 +79,8 @@
             
             <!-- About Section -->
             <section class="mb-10">
-                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-indigo-600">
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-teal-500 pb-2 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-teal-600">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15c2.25 0 2.25-1.5 2.25-3.75V8.25c0-2.25-1.5-3.75-3.75-3.75H4.5C2.25 4.5 2.25 6 2.25 8.25v8.25c0 2.25 1.5 3.75 3.75 3.75Z" />
                     </svg>
                     Introduction
@@ -56,14 +92,14 @@
             
             <!-- Education Section -->
             <section class="mb-10">
-                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-indigo-600">
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-teal-500 pb-2 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-teal-600">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.015 60.015 0 0 0 15.48 0M12 10.5h.007v.007H12V10.5Zm0 4.5h.007v.007H12V15Zm-4.5 0h.007v.007H7.5V15Zm-4.5 0h.007v.007H3V15Zm18-4.5h.007v.007H21V10.5Zm-4.5 0h.007v.007H16.5V10.5ZM12 7.5h.007v.007H12V7.5ZM8.25 7.5h.007v.007H8.25V7.5ZM4.5 7.5h.007v.007H4.5V7.5ZM4.5 19.5h15c2.25 0 2.25-1.5 2.25-3.75V8.25c0-2.25-1.5-3.75-3.75-3.75H4.5C2.25 4.5 2.25 6 2.25 8.25v8.25c0 2.25 1.5 3.75 3.75 3.75Z" />
                     </svg>
                     Education
                 </h2>
-                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-md transition duration-300 hover:shadow-lg hover:border-indigo-300">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-1">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-lg transition duration-300 hover:shadow-xl hover:border-teal-400">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-1">
                         B.Tech in Computer Science and Engineering (CSE)
                     </h3>
                     <p class="text-lg text-gray-800">
@@ -77,14 +113,14 @@
 
             <!-- Skills/Projects Placeholder -->
             <section class="mb-6">
-                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-4 flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-indigo-600">
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-teal-500 pb-2 mb-4 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-teal-600">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v-4.5m3 4.5v-6.75m3 6.75V9m-12 3h18.75m-18.75 0a1.5 1.5 0 0 1-1.5-1.5V5.25A2.25 2.25 0 0 1 5.25 3h13.5a2.25 2.25 0 0 1 2.25 2.25v6.75a1.5 1.5 0 0 1-1.5 1.5H3.75Z" />
                     </svg>
                     Skills & Projects
                 </h2>
-                <div class="text-center bg-gray-50 p-6 rounded-xl border border-dashed border-gray-300">
-                    <p class="text-gray-500 italic">
+                <div class="text-center bg-teal-50 p-6 rounded-xl border border-dashed border-teal-300">
+                    <p class="text-gray-600 italic">
                         This section is ready for you to add your specific skills (e.g., Python, Java, Web Development) and link to your latest projects!
                     </p>
                 </div>
@@ -94,3 +130,10 @@
         
         <!-- Footer -->
         <footer class="bg-gray-800 text-white p-4 text-center text-sm">
+            <p>&copy; 2025 Theertha P Subhash. Based in Kunnamkulam.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
